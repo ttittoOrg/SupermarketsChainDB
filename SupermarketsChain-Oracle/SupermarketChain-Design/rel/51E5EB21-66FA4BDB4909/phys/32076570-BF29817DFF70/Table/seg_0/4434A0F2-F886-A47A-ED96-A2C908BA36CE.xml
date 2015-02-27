@@ -1,0 +1,49 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="MEASURES" directorySegmentName="seg_0" id="4434A0F2-F886-A47A-ED96-A2C908BA36CE">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:36 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>B40873B9-0E91-3C57-62A9-3AF6C37A0BB0</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_MEASURE_ID" id="ADF403C3-DC6F-8E9A-901A-A5B41A87F951">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<segment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+</IndexProxy>
+</indexProxies>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MEASURE_NAME" id="4B1A4CBE-88DB-D62B-52F8-6871ED212414">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="M_ID" id="D26F0484-5B3C-FEBF-B76C-FDADC47FCBD0">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_MEASURE_ID" id="80E12C88-D966-2F5C-2F66-EE3DB1818F79">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<segment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+<existingIndex>ADF403C3-DC6F-8E9A-901A-A5B41A87F951</existingIndex>
+<indexSegment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

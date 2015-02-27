@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="SUPERMARKETCHAIN" directorySegmentName="seg_0" id="972C8711-F6A4-4C1E-D121-23BC34AD191D">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjName>SUPERMARKETCHAIN</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:36 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+</UserOraclev10g>

@@ -1,0 +1,179 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6AE983DD-3111-1905-D824-5377FDA52E5C" name="PRODUCTS">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>SUPERMARKETCHAIN</sourceObjSchema>
+<sourceObjName>PRODUCTS</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="P_ID" id="7C16AA55-6A5C-75C1-7A22-76303467A564">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>P_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="VENDOR_ID" id="7F379EA3-9A4F-6842-E952-04568E953E8A">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>VENDOR_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="150237D1-558C-87F7-F073-70401C24CEC7" referredColumn="45CBFDAD-753A-74C9-DB19-53DECF5C82B9"/>
+</associations>
+</Column>
+<Column name="PRODUCT_NAME" id="755B831D-29AC-3DC4-37CA-9AF71B9F7FBE">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>PRODUCT_NAME</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEASURE_ID" id="2A8B15F4-57AC-23E5-0923-AEC840333580">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>MEASURE_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4D7D7C92-E037-C4F6-0F82-AEC918F7DC93" referredColumn="D26F0484-5B3C-FEBF-B76C-FDADC47FCBD0"/>
+<colAssociation fkAssociation="B4C17327-E5D3-7477-9315-B050F6BF9537" referredColumn="09725291-036D-D8C7-5AB8-4E8D7C504F83"/>
+</associations>
+</Column>
+<Column name="PRICE" id="310EF58C-2F69-3D0D-3024-056E8C0C6302">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>PRICE</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>4</dataTypeScale>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUANTITY" id="A351A764-103B-08B6-D328-1A22D5389906">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>QUANTITY</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PRODUCT_TYPE" id="4989E8D6-1DDB-F7C7-1E69-D82525A5807E">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>PRODUCTS</sourceObjSchema>
+<sourceObjName>PRODUCT_TYPE</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AFECBDA3-52BE-C6EE-1485-EF4FA3C54480" name="PK_PRODUCT_ID">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>SUPERMARKETCHAIN</sourceObjSchema>
+<sourceObjName>PK_PRODUCT_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C16AA55-6A5C-75C1-7A22-76303467A564"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8CCCB58C-4024-9E13-1BCB-DE425AA1D1D1" name="PK_PRODUCT_ID">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>SUPERMARKETCHAIN</sourceObjSchema>
+<sourceObjName>PK_PRODUCT_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7C16AA55-6A5C-75C1-7A22-76303467A564"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5CEC5395-E2B3-C91F-57BE-0EC9146AE2ED" name="FK_MEASURES">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A8B15F4-57AC-23E5-0923-AEC840333580"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E37C04C7-4010-3A3B-5577-AEC6C06E92B9" name="FK_VENDORS">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7F379EA3-9A4F-6842-E952-04568E953E8A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9FF297B-6A39-3722-FBCB-138E281595E4" name="FK_MEASURESv1">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2A8B15F4-57AC-23E5-0923-AEC840333580"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

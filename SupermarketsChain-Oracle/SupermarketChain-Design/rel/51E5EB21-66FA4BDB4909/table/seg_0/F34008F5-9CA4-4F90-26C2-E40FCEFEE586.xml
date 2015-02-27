@@ -1,0 +1,70 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F34008F5-9CA4-4F90-26C2-E40FCEFEE586" name="MEASURE_UNITS">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>SUPERMARKETCHAIN</sourceObjSchema>
+<sourceObjName>MEASURE_UNITS</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>A01DDB39-264C-1B93-ED02-B905714DD78B</importedID>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="M_ID" id="09725291-036D-D8C7-5AB8-4E8D7C504F83">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>MEASURE_UNITS</sourceObjSchema>
+<sourceObjName>M_ID</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>62492838-A3D5-EED6-CC4E-B8974F31F731</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MEASURE_NAME" id="DE218591-A935-8FF6-FBAC-3C32193250B8">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>MEASURE_UNITS</sourceObjSchema>
+<sourceObjName>MEASURE_NAME</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>462D44BA-4164-20B5-AEA4-DBB6FEBFC5A6</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT037</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D893AF5D-129B-628D-7E13-017EB6486C13" name="PK_MEASURE_ID">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>E395892B-510D-8D82-B8D5-F44AFB3CD2D4</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09725291-036D-D8C7-5AB8-4E8D7C504F83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B9F717AF-EFA6-6C33-565C-F66E61CBCE70" name="PK_MEASURE_ID">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>4EDF3780-5486-61B9-B35C-83547F58F404</importedID>
+<indexState>Unique Plain Index</indexState>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09725291-036D-D8C7-5AB8-4E8D7C504F83"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>
+   <object objectType="TSpace" objectID="474D9EDF-E05E-2EE6-949B-124B78939C77" name="USERS" seqName="seg_0"/>
+   <object objectType="User" objectID="MDSYS" name="MDSYS" seqName="seg_0"/>
+   <object objectType="User" objectID="PUBLIC" name="PUBLIC" seqName="seg_0"/>
+   <object objectType="User" objectID="972C8711-F6A4-4C1E-D121-23BC34AD191D" name="SUPERMARKETCHAIN" seqName="seg_0"/>
+   <object objectType="SType" objectID="47E390DE-0671-C4B1-8428-0F45CBEE18F8" name="SDO_GEOMETRY" seqName="seg_0"/>
+   <object objectType="SType" objectID="F72C39E0-D1CA-8821-2AD7-A1E95A37D3D1" name="XMLTYPE" seqName="seg_0"/>
+   <object objectType="Table" objectID="43E4083D-075F-4BD1-7DB8-A236C4174F28" name="VENDORS" seqName="seg_0"/>
+   <object objectType="Table" objectID="4434A0F2-F886-A47A-ED96-A2C908BA36CE" name="MEASURES" seqName="seg_0"/>
+   <object objectType="Table" objectID="6AE983DD-3111-1905-D824-5377FDA52E5C" name="PRODUCTS" seqName="seg_0"/>
+   <object objectType="Table" objectID="F34008F5-9CA4-4F90-26C2-E40FCEFEE586" name="MEASURE_UNITS" seqName="seg_0"/>
+   <object objectType="Segment" objectID="B40873B9-0E91-3C57-62A9-3AF6C37A0BB0" name="Storage1" seqName="seg_0"/>
+   <object objectType="Segment" objectID="CB1DDAC1-70F8-D449-0E45-BEAA3284F171" name="Storage4" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="AC453765-FBBF-58D9-E75E-A4C5100D9C3C" name="TRIG_MEAS" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="57A906C9-167D-5C4A-EE8A-B0AD66E723C6" name="TRIG_MEASURE_UNITS" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="AEDA01C2-BF8A-E58D-A130-059A063FEE92" name="TRIG_PROD" seqName="seg_0"/>
+   <object objectType="Trigger" objectID="E80964A0-42B4-080C-759F-82C210B6E653" name="TRIG_VEND" seqName="seg_0"/>
+</oracle.dbtools.crest.model.design.storage.oracle.v11g.StorageDesignOraclev11g>

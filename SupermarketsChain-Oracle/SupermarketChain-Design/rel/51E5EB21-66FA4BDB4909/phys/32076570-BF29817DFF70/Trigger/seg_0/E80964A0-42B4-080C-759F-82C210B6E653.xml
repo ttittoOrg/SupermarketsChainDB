@@ -1,0 +1,14 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRIG_VEND" directorySegmentName="seg_0" id="E80964A0-42B4-080C-759F-82C210B6E653">
+<sourceConnName>SuperMarketChain</sourceConnName>
+<sourceObjSchema>SUPERMARKETCHAIN</sourceObjSchema>
+<sourceObjName>TRIG_VEND</sourceObjName>
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<actions>INSERT</actions>
+<body>BEGIN &lt;br/&gt;    SELECT VENDORS_SEQ.NEXTVAL&lt;br/&gt;    INTO :new.V_ID&lt;br/&gt;    FROM dual;&lt;br/&gt;  END;</body>
+<triggerTime>BEFORE</triggerTime>
+<owner>972C8711-F6A4-4C1E-D121-23BC34AD191D</owner>
+<table>43E4083D-075F-4BD1-7DB8-A236C4174F28</table>
+</TriggerOraclev10g>

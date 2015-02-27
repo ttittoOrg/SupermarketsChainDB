@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="PRODUCTS" directorySegmentName="seg_0" id="6AE983DD-3111-1905-D824-5377FDA52E5C">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>B40873B9-0E91-3C57-62A9-3AF6C37A0BB0</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_PRODUCT_ID" id="8CCCB58C-4024-9E13-1BCB-DE425AA1D1D1">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<schemaObject>1487D0BA-F839-2B51-D644-AEC72FF97E4C</schemaObject>
+<segment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+</IndexProxy>
+</indexProxies>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="MEASURE_ID" id="2A8B15F4-57AC-23E5-0923-AEC840333580">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRICE" id="310EF58C-2F69-3D0D-3024-056E8C0C6302">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_TYPE" id="4989E8D6-1DDB-F7C7-1E69-D82525A5807E">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PRODUCT_NAME" id="755B831D-29AC-3DC4-37CA-9AF71B9F7FBE">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_ID" id="7C16AA55-6A5C-75C1-7A22-76303467A564">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="VENDOR_ID" id="7F379EA3-9A4F-6842-E952-04568E953E8A">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="QUANTITY" id="A351A764-103B-08B6-D328-1A22D5389906">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_MEASURES" id="5CEC5395-E2B3-C91F-57BE-0EC9146AE2ED">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_VENDORS" id="E37C04C7-4010-3A3B-5577-AEC6C06E92B9">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_MEASURESv1" id="E9FF297B-6A39-3722-FBCB-138E281595E4">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-27 09:04:39 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_PRODUCT_ID" id="AFECBDA3-52BE-C6EE-1485-EF4FA3C54480">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<segment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</segment>
+<tableSpace>474D9EDF-E05E-2EE6-949B-124B78939C77</tableSpace>
+<existingIndex>8CCCB58C-4024-9E13-1BCB-DE425AA1D1D1</existingIndex>
+<indexSegment>CB1DDAC1-70F8-D449-0E45-BEAA3284F171</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

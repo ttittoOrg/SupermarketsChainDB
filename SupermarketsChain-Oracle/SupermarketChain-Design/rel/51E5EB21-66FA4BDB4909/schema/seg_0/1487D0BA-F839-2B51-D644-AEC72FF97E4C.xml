@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SchemaObject class="oracle.dbtools.crest.model.design.relational.SchemaObject" name="SUPERMARKETCHAIN" directorySegmentName="seg_0" id="1487D0BA-F839-2B51-D644-AEC72FF97E4C">
+<createdBy>ADM-BGSSTNV</createdBy>
+<createdTime>2015-02-26 21:52:37 UTC</createdTime>
+<ownerDesignName>SupermarketChain-Design</ownerDesignName>
+<importedID>90426ED2-9938-8E40-F3B0-AF94EEF6401A</importedID>
+</SchemaObject>

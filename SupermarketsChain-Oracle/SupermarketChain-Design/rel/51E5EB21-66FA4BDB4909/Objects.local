@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle.dbtools.crest.model.design.relational.RelationalDesign>
+   <object objectType="SchemaObject" objectID="1487D0BA-F839-2B51-D644-AEC72FF97E4C" name="SUPERMARKETCHAIN" seqName="seg_0"/>
+   <object objectType="Table" objectID="4434A0F2-F886-A47A-ED96-A2C908BA36CE" name="MEASURES" seqName="seg_0"/>
+   <object objectType="Table" objectID="F34008F5-9CA4-4F90-26C2-E40FCEFEE586" name="MEASURE_UNITS" seqName="seg_0"/>
+   <object objectType="Table" objectID="6AE983DD-3111-1905-D824-5377FDA52E5C" name="PRODUCTS" seqName="seg_0"/>
+   <object objectType="Table" objectID="43E4083D-075F-4BD1-7DB8-A236C4174F28" name="VENDORS" seqName="seg_0"/>
+   <object objectType="FKIndexAssociation" objectID="B4C17327-E5D3-7477-9315-B050F6BF9537" name="FK_MEASURESv1" seqName="seg_0" containerID="6AE983DD-3111-1905-D824-5377FDA52E5C" refContainerID="F34008F5-9CA4-4F90-26C2-E40FCEFEE586"/>
+   <object objectType="FKIndexAssociation" objectID="4D7D7C92-E037-C4F6-0F82-AEC918F7DC93" name="FK_MEASURES" seqName="seg_0" containerID="6AE983DD-3111-1905-D824-5377FDA52E5C" refContainerID="4434A0F2-F886-A47A-ED96-A2C908BA36CE"/>
+   <object objectType="FKIndexAssociation" objectID="150237D1-558C-87F7-F073-70401C24CEC7" name="FK_VENDORS" seqName="seg_0" containerID="6AE983DD-3111-1905-D824-5377FDA52E5C" refContainerID="43E4083D-075F-4BD1-7DB8-A236C4174F28"/>
+</oracle.dbtools.crest.model.design.relational.RelationalDesign>
