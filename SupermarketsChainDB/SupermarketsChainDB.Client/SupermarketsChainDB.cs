@@ -8,19 +8,24 @@
     using System.Text;
     using System.Threading.Tasks;
     using SQLManager;
+    using System.Data.Entity;
+    using SupermarketsChainDB.Data;
 
     public class SupermarketsChainDB
     {
-       
+
         static void Main(string[] args)
         {
-         String ConnStr = "Server={0};Database=SupermarketsChainDB;User Id=yavor;Password=Limon123;";
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
+            var data = new SupermarketSystemData();
 
-         String database = "192.168.137.156";
+            String ConnStr = "Server={0};Database=SupermarketsChainDB;User Id=yavor;Password=Limon123;";
 
-         ConnStr = String.Format(ConnStr, database);
+            String database = "192.168.137.156";
 
-         SqlManagerConnection sqlManager = new SqlManagerConnection(ConnStr);
+            ConnStr = String.Format(ConnStr, database);
+
+            SqlManagerConnection sqlManager = new SqlManagerConnection(ConnStr);
 
 
             DateTime fromDate = DateTime.ParseExact("20.07.2014", "dd.MM.yyyy", CultureInfo.InvariantCulture);
