@@ -9,9 +9,10 @@
     using System.Threading.Tasks;
     using SQLManager;
     using System.Data.Entity;
+    using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
 
-    public class SupermarketsChainDB
+    public class SupermarketsChainDBConsoleClient
     {
 
         static void Main(string[] args)
