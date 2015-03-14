@@ -11,6 +11,8 @@
     using System.Data.Entity;
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
+    using SupermarketsChainDB.Data.OracleDb;
+
     using SupermarketsChainDb.Manager;
 
     public class SupermarketsMain
@@ -20,14 +22,14 @@
         static void Main(string[] args)
         {
             
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
-            var data = new SupermarketSystemData();
+            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
+            //var data = new SupermarketSystemData();
 
-            SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
-            reportsMigrator.ExtractReports();
-            reportsMigrator.GetAllReports();
-            reportsMigrator.FillTable();
-            reportsMigrator.DeleteReports();
+            //SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
+            //reportsMigrator.ExtractReports();
+            //reportsMigrator.GetAllReports();
+            //reportsMigrator.FillTable();
+            //reportsMigrator.DeleteReports();
 
             //var measures = data.Measures.All().ToList();
 
@@ -51,6 +53,13 @@
             //    Console.WriteLine(item.Quantity);
             //}
 
+            var products = OracleDao.GetProducts();
+            foreach (var product in products)
+            {
+                Console.WriteLine(product);
+            }
+
+            OracleDao.Close();
         }
     }
 }
