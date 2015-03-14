@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketsChainDB.Client", "SupermarketsChainDB.Client\SupermarketsChainDB.Client.csproj", "{A9D4A456-FAC5-45C9-83DD-0A9F4B7564F4}"
 EndProject
@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketsChainDB.Data", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketsChainDb.Manager", "SupermarketsChainDb.Manager\SupermarketsChainDb.Manager.csproj", "{1CA8AA53-E03E-4F7E-8FF5-4A7121469C07}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{C687CF63-ADBD-42D7-A788-77D6C6744888}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{C687CF63-ADBD-42D7-A788-77D6C6744888}"
 	ProjectSection(SolutionItems) = preProject
 		SalesInfo\Sales-Reports.zip = SalesInfo\Sales-Reports.zip
 	EndProjectSection

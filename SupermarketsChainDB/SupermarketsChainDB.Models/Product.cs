@@ -22,7 +22,7 @@
         //[ForeignKey("Vendor")]
         public int VendorID { get; set; }
 
-        public virtual Vendor Vendors { get; set; }
+        public virtual Vendor Vendor { get; set; }
 
         [Required]
         [Column("Product Name")]
@@ -32,7 +32,7 @@
         //[ForeignKey("Measure")]
         public int MeasureID { get; set; }
 
-        public virtual Measure Measures { get; set; }
+        public virtual Measure Measure { get; set; }
 
         [Required]
         public decimal Price { get; set; }
