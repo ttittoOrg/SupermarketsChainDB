@@ -11,6 +11,10 @@
 
         IGenericRepository<Measure> Measures { get; }
 
+        IGenericRepository<Store> Stores { get; }
+
+        IGenericRepository<Sale> Sales { get; }
+
         int SaveChanges();
     }
 }

@@ -1,10 +1,20 @@
 ﻿namespace SupermarketsChainDB.Models
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
     public class Product
     {
+        private ICollection<Store> stores;
+        private ICollection<Sale> sales;
+
+        public Product()
+        {
+            this.stores = new HashSet<Store>();
+            this.sales = new HashSet<Sale>();
+        }
+
         [Key]
         public int ID { get; set; }
 
@@ -26,5 +36,9 @@
 
         [Required]
         public decimal Price { get; set; }
+
+        public virtual ICollection<Store> Stores { get; set; }
+
+        public virtual ICollection<Sale> Sales { get; set; }
     }
 }

@@ -12,6 +12,10 @@
 
         IDbSet<Measure> Measures { get; set; }
 
+        IDbSet<Store> Stores { get; set; }
+
+        IDbSet<Sale> Sales { get; set; }
+
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

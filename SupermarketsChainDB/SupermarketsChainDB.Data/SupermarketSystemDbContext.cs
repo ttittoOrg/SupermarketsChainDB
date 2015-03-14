@@ -21,6 +21,10 @@
 
         public IDbSet<Measure> Measures { get; set; }
 
+        public IDbSet<Store> Stores { get; set; }
+
+        public IDbSet<Sale> Sales { get; set; }
+
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();

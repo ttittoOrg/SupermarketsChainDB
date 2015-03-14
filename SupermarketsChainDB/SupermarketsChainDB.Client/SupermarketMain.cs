@@ -11,15 +11,25 @@
     using System.Data.Entity;
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
+    using SupermarketsChainDb.Manager;
 
-    public class SupermarketsChainDBClient
+    public class SupermarketsMain
     {
+        private const string reportsFile = "../../../SalesInfo/Sales-Reports.zip";
 
         static void Main(string[] args)
         {
+            
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
-            var measures = data.Measures.All().ToList();
+
+            SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
+            reportsMigrator.ExtractReports();
+            reportsMigrator.GetAllReports();
+            reportsMigrator.FillTable();
+            reportsMigrator.DeleteReports();
+
+            //var measures = data.Measures.All().ToList();
 
             //String ConnStr = "Server=(localdb)v11.0;Database=SupermarketSystem;Integrated Security=True;";
 

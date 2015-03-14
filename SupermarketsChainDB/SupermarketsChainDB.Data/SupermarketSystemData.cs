@@ -46,6 +46,22 @@
             }
         }
 
+        public IGenericRepository<Store> Stores
+        {
+            get
+            {
+                return this.GetRepository<Store>();
+            }
+        }
+
+        public IGenericRepository<Sale> Sales
+        {
+            get
+            {
+                return this.GetRepository<Sale>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();
