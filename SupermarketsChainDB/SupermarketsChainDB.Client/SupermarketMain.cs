@@ -13,7 +13,6 @@
     using SupermarketsChainDB.Data;
     using SupermarketsChainDB.Data.OracleDb;
 
-    using SupermarketsChainDb.Manager;
 
     public class SupermarketsMain
     {
