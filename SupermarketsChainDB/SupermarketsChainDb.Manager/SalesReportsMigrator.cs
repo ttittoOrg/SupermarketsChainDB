@@ -7,8 +7,6 @@
     using System.IO;
     using System.Linq;
     using Ionic.Zip;
-    using System.Text;
-    using System.Threading.Tasks;
     using SupermarketsChainDB.Data;
     using SupermarketsChainDB.Models;
 
@@ -143,13 +141,15 @@
 
         public void FillTable()
         {
-            var context = new SupermarketSystemDbContext();
-            using (context)
-            {
+           // var context = new SupermarketSystemDbContext();
+            SupermarketSystemData data = new SupermarketSystemData();
+            
+            //using (context)
+            //{
 
                 foreach (var report in this.reports)
                 {
-                    var supermarket = context.Stores.Where(s => s.Name == report.Name).FirstOrDefault();
+                    var supermarket = data.Stores.Search(s => s.Name == report.Name).FirstOrDefault();
 
 
                     if (supermarket == null)
@@ -159,9 +159,9 @@
                             Name = report.Name
                         };
 
-                        context.Stores.Add(newSupermarket);
+                        data.Stores.Add(newSupermarket);
                         supermarket = newSupermarket;
-                        context.SaveChanges();
+                        data.SaveChanges();
                     }
 
 
@@ -178,12 +178,12 @@
                             Date = report.Date
                         };
 
-                        context.Sales.Add(newSalesReport);
+                        data.Sales.Add(newSalesReport);
                     }
                 }
 
-                context.SaveChanges();
-            }
+                data.SaveChanges();
+            //}
         }
 
         public void DeleteReports()
