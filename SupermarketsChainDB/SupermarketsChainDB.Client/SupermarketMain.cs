@@ -23,12 +23,12 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
             
-            /*
+            
             SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
             reportsMigrator.ExtractReports();
             reportsMigrator.GetAllReports();
             reportsMigrator.FillTable();
-            reportsMigrator.DeleteReports();*/
+            reportsMigrator.DeleteReports();
 
             //var measures = data.Measures.All().ToList();
 
@@ -52,7 +52,7 @@
             //    Console.WriteLine(item.Quantity);
             //}
 
-            OracleToSqlDb.MigrateToSql();
+            //OracleToSqlDb.MigrateToSql();
         }
     }
 }
