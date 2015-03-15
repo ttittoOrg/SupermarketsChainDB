@@ -18,7 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{C687CF63-ADBD-42D7-A788-77D6C6744888}"
 	ProjectSection(SolutionItems) = preProject
 		SalesInfo\Sales-Reports.zip = SalesInfo\Sales-Reports.zip
-		..\..\SupermarketChainsDBTasks\Sample-Vendor-Expenses.xml = ..\..\SupermarketChainsDBTasks\Sample-Vendor-Expenses.xml
+		Input\Sample-Vendor-Expenses.xml = Input\Sample-Vendor-Expenses.xml
 	EndProjectSection
 EndProject
 Global

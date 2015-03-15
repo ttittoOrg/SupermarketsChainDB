@@ -24,8 +24,9 @@
 
         public int SaveExpenses()
         {
+            this.xmlDoc = new XmlDocument();
             this.xmlDoc.Load(this.filePath);
-            XmlNodeList vendors = xmlDoc.SelectNodes("vendor");
+            XmlNodeList vendors = xmlDoc.SelectNodes("expenses-by-month/vendor");
 
             foreach (XmlNode vendor in vendors)
             {

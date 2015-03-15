@@ -15,7 +15,7 @@
 
     public class SupermarketsMain
     {
-        private const string reportsFile = "../../../SalesInfo/Sales-Reports.zip";
+        private const string reportsFile = "../../../Input/Sales-Reports.zip";
 
         static void Main(string[] args)
         {
@@ -25,7 +25,8 @@
             SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
             reportsMigrator.MigrateSalesReport();
 
-            
+            XMLFromToMSSQL xmlParser = new XMLFromToMSSQL(data, @"../../../Input/Sample-Vendor-Expenses.xml");
+            xmlParser.SaveExpenses();
 
             //var measures = data.Measures.All().ToList();
 
