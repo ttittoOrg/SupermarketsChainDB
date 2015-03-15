@@ -104,6 +104,7 @@
                         //newSale.StoreID = currentStore.ID;
 
                         int reportsLength = dataTable.Rows.Count - 1;
+                        int couter = 0;
 
                         for (int row = 2; row < reportsLength; row++)
                         {
@@ -121,6 +122,8 @@
                                 }
                                 else
                                 {
+                                    
+                                    Console.WriteLine(couter++);
                                     throw new ArgumentNullException("Product", "Not existing product!");
                                 }
                                     

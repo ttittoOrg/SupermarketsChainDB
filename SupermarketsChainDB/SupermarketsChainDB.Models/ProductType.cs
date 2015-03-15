@@ -4,7 +4,7 @@
     {
         Food,
         Confectionery,
-        АlcoholDrinks,
+        AlcoholDrinks,
         NonAlcoholDrinks,
         BodyCare,
         Other

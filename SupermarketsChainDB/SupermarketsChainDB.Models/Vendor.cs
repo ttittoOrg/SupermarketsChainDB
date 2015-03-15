@@ -16,6 +16,7 @@
         }
 
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Column("Vendor Name")]

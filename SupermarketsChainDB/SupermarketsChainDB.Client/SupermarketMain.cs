@@ -30,6 +30,8 @@
             reportsMigrator.FillTable();
             reportsMigrator.DeleteReports();
 
+            OracleToSqlDb.MigrateToSql();
+
             //var measures = data.Measures.All().ToList();
 
             //String ConnStr = "Server=(localdb)v11.0;Database=SupermarketSystem;Integrated Security=True;";

@@ -16,10 +16,11 @@
         }
 
         [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
-        //[ForeignKey("Vendor")]
+        [ForeignKey("Vendor")]
         public int VendorId { get; set; }
 
         public virtual Vendor Vendor { get; set; }
@@ -29,7 +30,7 @@
         public string ProductName { get; set; }
 
         [Required]
-        //[ForeignKey("Measure")]
+        [ForeignKey("Measure")]
         public int MeasureId { get; set; }
 
         public virtual Measure Measure { get; set; }

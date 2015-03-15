@@ -23,51 +23,51 @@
                 return;
             }*/
 
-            var measures = new List<Measure> 
-            {
-                new Measure { MeasureName = "liters" },
-                new Measure { MeasureName = "pieces" },
-                new Measure { MeasureName = "kg" }
-            };
+            //var measures = new List<Measure> 
+            //{
+            //    new Measure { MeasureName = "liters" },
+            //    new Measure { MeasureName = "pieces" },
+            //    new Measure { MeasureName = "kg" }
+            //};
 
-            var vendors = new List<Vendor> 
-            {
-                new Vendor { VendorName  = "Nestle Sofia Corp." },
-                new Vendor { VendorName  = "Zagorka Corp." },
-                new Vendor { VendorName  = "Targovishte Bottling Company Ltd." }
+            //var vendors = new List<Vendor> 
+            //{
+            //    new Vendor { VendorName  = "Nestle Sofia Corp." },
+            //    new Vendor { VendorName  = "Zagorka Corp." },
+            //    new Vendor { VendorName  = "Targovishte Bottling Company Ltd." }
 
-            };
+            //};
 
-            var products = new List<Product>
-            {
-                new Product { Id = 10, ProductName = "Beer “Zagorka”", Price = 0.86M, VendorId = 2, MeasureId = 1, ProductType = ProductType.АlcoholDrinks },
-                new Product { ProductName = "Vodka “Targovishte”", Price = 7.56M, VendorId = 3, MeasureId = 1, ProductType = ProductType.АlcoholDrinks },
-                new Product { ProductName = "Beer “Beck’s”", Price = 1.03M, VendorId = 2, MeasureId = 1, ProductType = ProductType.АlcoholDrinks },
-                new Product { ProductName = "Chocolate “Milka”", Price = 2.80M, VendorId = 1, MeasureId = 2, ProductType = ProductType.Confectionery },
-            };
+            //var products = new List<Product>
+            //{
+            //    new Product {  ProductName = "Beer “Zagorka”", Price = 0.86M, VendorId = 2, MeasureId = 1, ProductType = ProductType.AlcoholDrinks },
+            //    new Product { ProductName = "Vodka “Targovishte”", Price = 7.56M, VendorId = 3, MeasureId = 1, ProductType = ProductType.AlcoholDrinks },
+            //    new Product { ProductName = "Beer “Beck’s”", Price = 1.03M, VendorId = 2, MeasureId = 1, ProductType = ProductType.AlcoholDrinks },
+            //    new Product { ProductName = "Chocolate “Milka”", Price = 2.80M, VendorId = 1, MeasureId = 2, ProductType = ProductType.Confectionery },
+            //};
 
-            foreach (var measure in measures)
-            {
-                context.Measures.Add(measure);
-            }
+            //foreach (var measure in measures)
+            //{
+            //    context.Measures.Add(measure);
+            //}
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            foreach (var vendor in vendors)
-            {
-                context.Vendors.Add(vendor);
-            }
+            //foreach (var vendor in vendors)
+            //{
+            //    context.Vendors.Add(vendor);
+            //}
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            foreach (var product in products)
-            {
-                context.Products.Add(product);
-            }
+            //foreach (var product in products)
+            //{
+            //    context.Products.Add(product);
+            //}
 
-            context.SaveChanges();
+            //context.SaveChanges();
 
-            base.Seed(context);
+            //base.Seed(context);
         }
     }
 }

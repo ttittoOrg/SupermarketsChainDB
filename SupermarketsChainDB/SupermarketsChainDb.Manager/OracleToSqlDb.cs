@@ -41,20 +41,22 @@
             con.Open();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "SELECT M_ID, MEASURE_NAME FROM MEASURE_UNITS";
-            
+
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    data.Measures.Add(new Measure 
-                    {
-                        MeasureName = (string)reader["MEASURE_NAME"]
-                    });
-                    
+                    Measure measure = new Measure();
+                    measure.Id = int.Parse(reader["M_ID"].ToString());
+                    measure.MeasureName = (string)reader["MEASURE_NAME"];
+
+                    data.Measures.Add(measure);
+
                 }
+
                 data.SaveChanges();
-                reader.Dispose();
             }
+
             Close();
         }
 
@@ -70,14 +72,14 @@
             {
                 while (reader.Read())
                 {
-                    data.Vendors.Add(new Vendor 
-                    {
-                        VendorName = (string)reader["VENDOR_NAME"]
-                    });
-                    
+                    Vendor vendor = new Vendor();
+                    vendor.Id = int.Parse(reader["V_ID"].ToString());
+                    vendor.VendorName = (string)reader["VENDOR_NAME"];
+
+                    data.Vendors.Add(vendor);
                 }
+
                 data.SaveChanges();
-                reader.Dispose();
             }
             Close();
         }
@@ -90,35 +92,31 @@
             con.Open();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "SELECT P_ID, " +
-                                    "VENDOR_ID," + 
+                                    "VENDOR_ID," +
                                     "PRODUCT_NAME, " +
                                     "MEASURE_ID, " +
                                     "PRICE, " +
-                                    "PRODUCT_TYPE " +  
+                                    "PRODUCT_TYPE " +
                               "FROM PRODUCTS";
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
+                    Product product = new Product();
                     // for debugging
-                    var vendorId = reader["VENDOR_ID"];
-                    string productName = (string)reader["PRODUCT_NAME"];
-                    int measureId = int.Parse((string)reader["MEASURE_ID"]);
-                    decimal price = decimal.Parse((string)reader["PRICE"]);
+                    product.Id = int.Parse(reader["P_ID"].ToString());
+                    product.VendorId = int.Parse(reader["VENDOR_ID"].ToString());
+                    product.ProductName = reader["PRODUCT_NAME"].ToString();
+                    product.MeasureId = int.Parse(reader["MEASURE_ID"].ToString());
+                    product.Price = decimal.Parse(reader["PRICE"].ToString());
+                    product.ProductType = (ProductType)Enum.Parse(typeof(ProductType), reader["PRODUCT_TYPE"].ToString());
 
-                    data.Products.Add(new Product 
-                    {
-                        VendorId = (int)vendorId,
-                        ProductName = productName,
-                        MeasureId = measureId,
-                        Price = price
-                        //ProductType = (string)reader["PRODUCT_TYPE"]
-                    });
-                    
+                    data.Products.Add(product);
+
                 }
+
                 data.SaveChanges();
-                reader.Dispose();
             }
             Close();
         }
@@ -127,6 +125,6 @@
         {
             con.Close();
             con.Dispose();
-        } 
+        }
     }
 }
