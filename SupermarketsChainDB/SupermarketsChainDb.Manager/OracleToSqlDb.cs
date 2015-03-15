@@ -109,9 +109,9 @@
 
                     data.Products.Add(new Product 
                     {
-                        VendorID = (int)vendorId,
+                        VendorId = (int)vendorId,
                         ProductName = productName,
-                        MeasureID = measureId,
+                        MeasureId = measureId,
                         Price = price
                         //ProductType = (string)reader["PRODUCT_TYPE"]
                     });

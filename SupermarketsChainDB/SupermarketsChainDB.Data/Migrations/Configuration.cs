@@ -1,4 +1,4 @@
-namespace SupermarketsChainDB.Data.Migrations
+Ôªønamespace SupermarketsChainDB.Data.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -40,10 +40,10 @@ namespace SupermarketsChainDB.Data.Migrations
 
             var products = new List<Product>
             {
-                new Product { ProductName = "Beer ìZagorkaî", Price = 0.86M, VendorID = 2, MeasureID = 1, ProductType = ProductType.¿lcoholDrinks },
-                new Product { ProductName = "Vodka ìTargovishteî", Price = 7.56M, VendorID = 3, MeasureID = 1, ProductType = ProductType.¿lcoholDrinks },
-                new Product { ProductName = "Beer ìBeckísî", Price = 1.03M, VendorID = 2, MeasureID = 1, ProductType = ProductType.¿lcoholDrinks },
-                new Product { ProductName = "Chocolate ìMilkaî", Price = 2.80M, VendorID = 1, MeasureID = 2, ProductType = ProductType.Confectionery },
+                new Product { Id = 10, ProductName = "Beer ‚ÄúZagorka‚Äù", Price = 0.86M, VendorId = 2, MeasureId = 1, ProductType = ProductType.–êlcoholDrinks },
+                new Product { ProductName = "Vodka ‚ÄúTargovishte‚Äù", Price = 7.56M, VendorId = 3, MeasureId = 1, ProductType = ProductType.–êlcoholDrinks },
+                new Product { ProductName = "Beer ‚ÄúBeck‚Äôs‚Äù", Price = 1.03M, VendorId = 2, MeasureId = 1, ProductType = ProductType.–êlcoholDrinks },
+                new Product { ProductName = "Chocolate ‚ÄúMilka‚Äù", Price = 2.80M, VendorId = 1, MeasureId = 2, ProductType = ProductType.Confectionery },
             };
 
             foreach (var measure in measures)

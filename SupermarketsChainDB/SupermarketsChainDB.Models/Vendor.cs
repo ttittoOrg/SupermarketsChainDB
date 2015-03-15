@@ -16,7 +16,7 @@
         }
 
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Column("Vendor Name")]
         public string VendorName { get; set; }

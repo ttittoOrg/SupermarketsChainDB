@@ -116,7 +116,7 @@
                                 var product = data.Products.Search(p => p.ProductName == productName).FirstOrDefault();
                                 if (product != null)
                                 {
-                                    newReport.ProductID.Add(product.ID);
+                                    newReport.ProductID.Add(product.Id);
                                     //newSale.ProductID = product.ID;
                                 }
                                 else
@@ -197,8 +197,8 @@
                 {
                     var newSale = new Sale()
                     {
-                        StoreID = supermarket.ID,
-                        ProductID = report.ProductID[i],
+                        StoreId = supermarket.Id,
+                        ProductId = report.ProductID[i],
                         Quantity = report.Quantity[i],
                         SinglePrice = report.UnitPrice[i],
                         Sum = report.Sum[i],

@@ -16,11 +16,11 @@
         }
 
         [Key]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         //[ForeignKey("Vendor")]
-        public int VendorID { get; set; }
+        public int VendorId { get; set; }
 
         public virtual Vendor Vendor { get; set; }
 
@@ -30,7 +30,7 @@
 
         [Required]
         //[ForeignKey("Measure")]
-        public int MeasureID { get; set; }
+        public int MeasureId { get; set; }
 
         public virtual Measure Measure { get; set; }
 
