@@ -11,7 +11,8 @@
     using System.Data.Entity;
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
-    using SupermarketsChainDB.Data.OracleDb;
+    using SupermarketsChainDb.Manager;
+    
 
 
     public class SupermarketsMain
@@ -51,14 +52,14 @@
             //    Console.WriteLine(item.Sum);
             //    Console.WriteLine(item.Quantity);
             //}
-
-            var products = OracleDao.GetProducts();
+            OracleToMSSQL oracleManager = new OracleToMSSQL();
+            var products = oracleManager.GetProducts();
             foreach (var product in products)
             {
                 Console.WriteLine(product);
             }
 
-            OracleDao.Close();
+            oracleManager.Close();
         }
     }
 }

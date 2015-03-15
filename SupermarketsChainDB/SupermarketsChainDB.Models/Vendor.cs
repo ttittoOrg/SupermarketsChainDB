@@ -7,10 +7,12 @@
     public class Vendor
     {
         private ICollection<Product> products;
+        private ICollection<Expense> expenses;
 
         public Vendor()
         {
             this.products = new HashSet<Product>();
+            this.expenses = new HashSet<Expense>();
         }
 
         [Key]
@@ -20,5 +22,7 @@
         public string VendorName { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
+
+        public virtual ICollection<Expense> Expenses { get; set; }
     }
 }

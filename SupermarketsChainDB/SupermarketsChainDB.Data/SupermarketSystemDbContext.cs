@@ -25,6 +25,8 @@
 
         public IDbSet<Sale> Sales { get; set; }
 
+        public IDbSet<Expense> Expenses { get; set; }
+
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
             return base.Set<TEntity>();
