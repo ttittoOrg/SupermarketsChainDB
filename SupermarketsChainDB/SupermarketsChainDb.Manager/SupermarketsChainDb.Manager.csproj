@@ -51,10 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connection.cs" />
-    <Compile Include="OracleToSqlDb.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report.cs" />
     <Compile Include="SalesReportsMigrator.cs" />
   </ItemGroup>
   <ItemGroup>

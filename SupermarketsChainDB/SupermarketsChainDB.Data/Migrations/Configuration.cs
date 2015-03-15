@@ -18,8 +18,8 @@
         protected override void Seed(SupermarketSystemDbContext context)
         {
             OracleToSqlDb.MigrateToSql();
-            //context.Database.ExecuteSqlCommand("ALTER TABLE VENDORS CREATE ");
-            /*/
+
+            /*
 
             //var measures = new List<Measure> 
             //{
