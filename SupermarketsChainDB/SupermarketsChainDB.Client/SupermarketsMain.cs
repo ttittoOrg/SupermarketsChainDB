@@ -19,15 +19,11 @@
 
         static void Main(string[] args)
         {
-            
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
 
             SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
-            reportsMigrator.ExtractReports();
-            reportsMigrator.GetAllReports();
-            reportsMigrator.FillTable();
-            reportsMigrator.DeleteReports();
+            reportsMigrator.MigrateSalesReport();
 
             
 
