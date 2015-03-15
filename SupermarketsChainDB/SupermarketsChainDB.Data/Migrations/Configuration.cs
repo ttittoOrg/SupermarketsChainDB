@@ -21,7 +21,7 @@ namespace SupermarketsChainDB.Data.Migrations
             /*if (context.Measures.Any())
             {
                 return;
-            }
+            }*/
 
             var measures = new List<Measure> 
             {
@@ -40,10 +40,10 @@ namespace SupermarketsChainDB.Data.Migrations
 
             var products = new List<Product>
             {
-                new Product { ProductName = "Beer “Zagorka”", Price = 0.86M, VendorID = 20, MeasureID = 100, ProductType = ProductType.ÀlcoholDrinks },
-                new Product { ProductName = "Vodka “Targovishte”", Price = 7.56M, VendorID = 30, MeasureID = 100, ProductType = ProductType.ÀlcoholDrinks },
-                new Product { ProductName = "Beer “Beck’s”", Price = 1.03M, VendorID = 20, MeasureID = 100, ProductType = ProductType.ÀlcoholDrinks },
-                new Product { ProductName = "Chocolate “Milka”", Price = 2.80M, VendorID = 10, MeasureID = 200, ProductType = ProductType.Confectionery },
+                new Product { ProductName = "Beer “Zagorka”", Price = 0.86M, VendorID = 2, MeasureID = 1, ProductType = ProductType.ÀlcoholDrinks },
+                new Product { ProductName = "Vodka “Targovishte”", Price = 7.56M, VendorID = 3, MeasureID = 1, ProductType = ProductType.ÀlcoholDrinks },
+                new Product { ProductName = "Beer “Beck’s”", Price = 1.03M, VendorID = 2, MeasureID = 1, ProductType = ProductType.ÀlcoholDrinks },
+                new Product { ProductName = "Chocolate “Milka”", Price = 2.80M, VendorID = 1, MeasureID = 2, ProductType = ProductType.Confectionery },
             };
 
             foreach (var measure in measures)
@@ -51,10 +51,14 @@ namespace SupermarketsChainDB.Data.Migrations
                 context.Measures.Add(measure);
             }
 
+            context.SaveChanges();
+
             foreach (var vendor in vendors)
             {
                 context.Vendors.Add(vendor);
             }
+
+            context.SaveChanges();
 
             foreach (var product in products)
             {
@@ -63,7 +67,7 @@ namespace SupermarketsChainDB.Data.Migrations
 
             context.SaveChanges();
 
-            base.Seed(context);*/
+            base.Seed(context);
         }
     }
 }
