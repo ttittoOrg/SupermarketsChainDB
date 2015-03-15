@@ -1,4 +1,4 @@
-﻿/*namespace SupermarketsChainDb.Manager
+﻿namespace SupermarketsChainDB.Data
 {
     using System;
     using System.Collections.Generic;
@@ -33,4 +33,4 @@
             return mongoConnectionString;
         }
     }
-}*/
+}

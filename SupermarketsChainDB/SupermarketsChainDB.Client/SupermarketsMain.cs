@@ -23,8 +23,6 @@
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
 
-            OracleToSqlDb.MigrateToSql();
-
             SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
             reportsMigrator.ExtractReports();
             reportsMigrator.GetAllReports();

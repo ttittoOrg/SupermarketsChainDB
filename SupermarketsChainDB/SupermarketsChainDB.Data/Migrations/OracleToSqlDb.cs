@@ -1,4 +1,4 @@
-﻿/*namespace SupermarketsChainDb.Manager
+﻿namespace SupermarketsChainDB.Data.Migrations
 {
     using System;
     using System.Collections.Generic;
@@ -127,4 +127,4 @@
             con.Dispose();
         }
     }
-}*/
+}

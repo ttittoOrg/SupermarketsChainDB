@@ -17,11 +17,14 @@
 
         protected override void Seed(SupermarketSystemDbContext context)
         {
-            //context.Database.ExecuteSqlCommand("ALTER TABLE VENDORS CREATE ");
-            /*if (context.Measures.Any())
+            if (context.Measures.Any())
             {
                 return;
-            }*/
+            }
+
+            OracleToSqlDb.MigrateToSql();
+            //context.Database.ExecuteSqlCommand("ALTER TABLE VENDORS CREATE ");
+            /*/
 
             //var measures = new List<Measure> 
             //{
@@ -67,7 +70,7 @@
 
             //context.SaveChanges();
 
-            //base.Seed(context);
+            //base.Seed(context);*/
         }
     }
 }
