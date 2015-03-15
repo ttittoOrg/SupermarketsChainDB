@@ -105,6 +105,10 @@ CREATE TABLE PRODUCTS
   CONSTRAINT FK_MEASURES FOREIGN KEY (MEASURE_ID) REFERENCES MEASURE_UNITS(M_ID)
 );
 
+--DROP SEQUENCE PROD_SEQ;
+--DROP TRIGGER TRIG_PROD;
+--TRUNCATE TABLE PRODUCTS;
+
 CREATE SEQUENCE PROD_SEQ
 MINVALUE 1
 START WITH 1
@@ -123,25 +127,25 @@ CREATE OR REPLACE TRIGGER TRIG_PROD
 BEGIN
   INSERT ALL
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (20, 'Beer “Zagorka”', 100, 0.86, 'alcohol drinks')
+          VALUES  (20, 'Beer “Zagorka”', 100, 0.86, 'alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (30, 'Vodka “Targovishte”', 100, 7.56, 'alcohol drinks')          
+          VALUES  (30, 'Vodka “Targovishte”', 100, 7.56, 'alcohol_drinks')          
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (20, 'Beer “Beck’s”', 100, 1.03, 'alcohol drinks')
+          VALUES  (20, 'Beer “Beck’s”', 100, 1.03, 'alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (10, 'Chocolate “Milka”', 200, 2.80, 'confectionery')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (40, 'Coca-Cola 2l', 100, 2.50, 'non-alcohol drinks')
+          VALUES  (40, 'Coca-Cola 2l', 100, 2.50, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (50, 'Jim Beam', 100, 20, 'alcohol drinks')
+          VALUES  (50, 'Jim Beam', 100, 20, 'alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (70, 'Kamenitza', 100, 1.25, 'alcohol drinks')
+          VALUES  (70, 'Kamenitza', 100, 1.25, 'alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (10, 'Nesquik 200g', 300, 4.15, 'non-alcohol drinks')
+          VALUES  (10, 'Nesquik 200g', 300, 4.15, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (10, 'Kit-Kat 90g', 300, 1.00, 'confectionery')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (10, 'Nescafe 250g', 300, 9.50, 'non-alcohol drinks')
+          VALUES  (10, 'Nescafe 250g', 300, 9.50, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (80, 'Cereal with chocolate', 300, 2.00, 'food')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
@@ -153,17 +157,17 @@ BEGIN
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (90, 'Ovcho Narodno cheese', 300, 8.40, 'food')         
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (180, 'Aroma Vital Exfoliating soap 100g', 200, 0.99, 'body care')
+          VALUES  (180, 'Aroma Vital Exfoliating soap 100g', 200, 0.99, 'body_care')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (170, 'Devin Mineral Water 10l', 100, 3.99, 'non-alcohol drinks')
+          VALUES  (170, 'Devin Mineral Water 10l', 100, 3.99, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (170, 'Devin Mineral Water 1.5l', 100, 0.85, 'non-alcohol drinks')
+          VALUES  (170, 'Devin Mineral Water 1.5l', 100, 0.85, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (110, 'JOHNSON’S baby HEAD-TO-TOE wash shampoo 444ml', 
-                    200, 3.15, 'body care')
+                    200, 3.15, 'body_care')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (110, 'JOHNSON’S baby moisture wash with honey apple shampoo 444ml', 
-                    200, 3.15, 'body care')
+                    200, 3.15, 'body_care')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (210, 'Costa d`Oro 1l', 200, 13.59, 'food')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
@@ -171,15 +175,15 @@ BEGIN
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (100, 'Yoghurt 0.1% 450g', 200, 0.90, 'food')  
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (190, 'Head ' || chr(38) || ' Shoulders', 200, 5.35, 'body care')
+          VALUES  (190, 'Head ' || chr(38) || ' Shoulders', 200, 5.35, 'body_care')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (140, 'Happy Day 100% Orange 1l', 200, 2.30, 'non-alcohol drinks')
+          VALUES  (140, 'Happy Day 100% Orange 1l', 200, 2.30, 'non-alcohol_drinks')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
           VALUES  (10, 'Heinz Tomato Ketchup', 200, 4.80, 'food')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (200, 'NIVEA honey ' || chr(38) || ' oil soap', 200, 0.90, 'body care')
+          VALUES  (200, 'NIVEA honey ' || chr(38) || ' oil soap', 200, 0.90, 'body_care')
     INTO PRODUCTS (VENDOR_ID, PRODUCT_NAME, MEASURE_ID, PRICE, PRODUCT_TYPE) 
-          VALUES  (180, 'Natural Elements Red Fruits soap 100g', 200, 0.99, 'body care')            
+          VALUES  (180, 'Natural Elements Red Fruits soap 100g', 200, 0.99, 'body_care')            
     SELECT * FROM dual  
     COMMIT;
 EXCEPTION
