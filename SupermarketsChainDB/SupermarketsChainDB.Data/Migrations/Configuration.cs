@@ -17,11 +17,6 @@
 
         protected override void Seed(SupermarketSystemDbContext context)
         {
-            if (context.Measures.Any())
-            {
-                return;
-            }
-
             OracleToSqlDb.MigrateToSql();
             //context.Database.ExecuteSqlCommand("ALTER TABLE VENDORS CREATE ");
             /*/

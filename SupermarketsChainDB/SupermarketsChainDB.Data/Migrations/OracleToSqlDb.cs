@@ -44,14 +44,26 @@
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
+                var lastMeasure = data.Measures.All().OrderByDescending(v => v.Id).FirstOrDefault();
+                int dataId = 0;
+
+                if (lastMeasure != null)
+                {
+                    dataId = lastMeasure.Id;
+                }
+
                 while (reader.Read())
                 {
-                    Measure measure = new Measure();
-                    measure.Id = int.Parse(reader["M_ID"].ToString());
-                    measure.MeasureName = (string)reader["MEASURE_NAME"];
+                    int measureId = int.Parse(reader["M_ID"].ToString());
 
-                    data.Measures.Add(measure);
+                    if (dataId < measureId)
+                    {
+                        Measure measure = new Measure();
+                        measure.Id = measureId;
+                        measure.MeasureName = (string)reader["MEASURE_NAME"];
 
+                        data.Measures.Add(measure);
+                    }
                 }
 
                 data.SaveChanges();
@@ -70,13 +82,26 @@
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
+                var lastVendor = data.Vendors.All().OrderByDescending(v => v.Id).FirstOrDefault();
+                int dataId = 0;
+
+                if (lastVendor != null)
+                {
+                    dataId = lastVendor.Id;
+                }
+
                 while (reader.Read())
                 {
-                    Vendor vendor = new Vendor();
-                    vendor.Id = int.Parse(reader["V_ID"].ToString());
-                    vendor.VendorName = (string)reader["VENDOR_NAME"];
+                    int vendorId = int.Parse(reader["V_ID"].ToString());
 
-                    data.Vendors.Add(vendor);
+                    if (dataId < vendorId)
+                    {
+                        Vendor vendor = new Vendor();
+                        vendor.Id = vendorId;
+                        vendor.VendorName = (string)reader["VENDOR_NAME"];
+
+                        data.Vendors.Add(vendor);
+                    }
                 }
 
                 data.SaveChanges();
@@ -101,18 +126,31 @@
 
             using (OracleDataReader reader = cmd.ExecuteReader())
             {
+                var lastProduct = data.Products.All().OrderByDescending(p => p.Id).FirstOrDefault();
+                int dataId = 0;
+
+                if (lastProduct != null)
+                {
+                    dataId = lastProduct.Id;
+                }
+
                 while (reader.Read())
                 {
-                    Product product = new Product();
-                    // for debugging
-                    product.Id = int.Parse(reader["P_ID"].ToString());
-                    product.VendorId = int.Parse(reader["VENDOR_ID"].ToString());
-                    product.ProductName = reader["PRODUCT_NAME"].ToString();
-                    product.MeasureId = int.Parse(reader["MEASURE_ID"].ToString());
-                    product.Price = decimal.Parse(reader["PRICE"].ToString());
-                    product.ProductType = (ProductType)Enum.Parse(typeof(ProductType), reader["PRODUCT_TYPE"].ToString());
+                    int productId = int.Parse(reader["P_ID"].ToString());
 
-                    data.Products.Add(product);
+                    if (dataId < productId)
+                    {
+                        Product product = new Product();
+                        // for debugging
+                        product.Id = productId;
+                        product.VendorId = int.Parse(reader["VENDOR_ID"].ToString());
+                        product.ProductName = reader["PRODUCT_NAME"].ToString();
+                        product.MeasureId = int.Parse(reader["MEASURE_ID"].ToString());
+                        product.Price = decimal.Parse(reader["PRICE"].ToString());
+                        product.ProductType = (ProductType)Enum.Parse(typeof(ProductType), reader["PRODUCT_TYPE"].ToString());
+
+                        data.Products.Add(product);
+                    }
 
                 }
 
