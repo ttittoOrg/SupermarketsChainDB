@@ -51,6 +51,7 @@
     <Compile Include="Expense.cs" />
     <Compile Include="Measure.cs" />
     <Compile Include="Product.cs" />
+    <Compile Include="ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sale.cs" />
     <Compile Include="Store.cs" />

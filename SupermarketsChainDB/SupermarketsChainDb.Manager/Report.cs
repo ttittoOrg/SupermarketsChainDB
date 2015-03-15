@@ -16,6 +16,8 @@ namespace SupermarketsChainDb.Manager
             this.Sum = new List<decimal>();
         }
 
+        public int ID { get; set; }
+
         public string Name { get; set; }
 
         public DateTime Date { get; set; }

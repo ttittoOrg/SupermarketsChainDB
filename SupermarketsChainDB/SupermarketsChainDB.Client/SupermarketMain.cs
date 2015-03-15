@@ -12,8 +12,6 @@
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
     using SupermarketsChainDb.Manager;
-    
-
 
     public class SupermarketsMain
     {
@@ -22,14 +20,15 @@
         static void Main(string[] args)
         {
             
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
-            //var data = new SupermarketSystemData();
-
-            //SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
-            //reportsMigrator.ExtractReports();
-            //reportsMigrator.GetAllReports();
-            //reportsMigrator.FillTable();
-            //reportsMigrator.DeleteReports();
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
+            var data = new SupermarketSystemData();
+            
+            /*
+            SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
+            reportsMigrator.ExtractReports();
+            reportsMigrator.GetAllReports();
+            reportsMigrator.FillTable();
+            reportsMigrator.DeleteReports();*/
 
             //var measures = data.Measures.All().ToList();
 
@@ -52,14 +51,8 @@
             //    Console.WriteLine(item.Sum);
             //    Console.WriteLine(item.Quantity);
             //}
-            OracleToMSSQL oracleManager = new OracleToMSSQL();
-            var products = oracleManager.GetProducts();
-            foreach (var product in products)
-            {
-                Console.WriteLine(product);
-            }
 
-            oracleManager.Close();
+            OracleToSqlDb.MigrateToSql();
         }
     }
 }

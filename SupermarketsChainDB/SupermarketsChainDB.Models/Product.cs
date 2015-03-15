@@ -37,6 +37,9 @@
         [Required]
         public decimal Price { get; set; }
 
+        [Required]
+        public ProductType ProductType { get; set; }
+
         public virtual ICollection<Store> Stores { get; set; }
 
         public virtual ICollection<Sale> Sales { get; set; }

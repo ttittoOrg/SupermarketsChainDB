@@ -18,6 +18,7 @@
         private List<string> connectionStrings;
         private List<Report> reports;
         private const string UnpackDirectoryName = "Extracted Reports";
+        private SupermarketSystemData data = new SupermarketSystemData();
 
         public SalesReportsMigrator(string zipFilePath)
         {
@@ -69,65 +70,95 @@
                 {
                     using (excelConnection)
                     {
-                        OleDbDataAdapter da = new OleDbDataAdapter("select * from [Sales$]", excelConnection);
-                        DataTable dt = new DataTable();
-                        da.Fill(dt);
+                        OleDbDataAdapter dataAdapter = new OleDbDataAdapter("select * from [Sales$]", excelConnection);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+                        
                         Report newReport = new Report();
+                        //Sale newSale = new Sale();
 
                         string[] conArgs = connectionString.Split('\\');
 
                         if (!string.IsNullOrEmpty(conArgs[1]))
                         {
                             DateTime date = this.ParseDate(conArgs[1]);
+                            // Date of sale
                             newReport.Date = date;
+                            //newSale.Date = date;
                         }
 
-                        DataRow headerRow = dt.Rows[0];
-                        string headerRowValue = headerRow.ItemArray[0].ToString();
-                        newReport.Name = headerRowValue;
-
-                        for (int row = 2; row < dt.Rows.Count - 1; row++)
+                        DataRow headerRow = dataTable.Rows[0];
+                        string storeName = headerRow.ItemArray[0].ToString();
+                        // Name of the store
+                        /*Store currentStore = data.Stores.Search(s => s.Name == storeName).FirstOrDefault();
+                        if (currentStore == null)
                         {
-                            DataRow r = dt.Rows[row];
+                            var newStore = new Store { Name = storeName };
+                            data.Stores.Add(newStore);
+                            data.SaveChanges();
+                            // TODO: To optimized !!!
+                            currentStore = data.Stores.Search(s => s.Name == storeName).FirstOrDefault();
+                        }*/
 
-                            string productIdValue = r.ItemArray[0].ToString();
-                            if (!string.IsNullOrEmpty(productIdValue))
+                        newReport.Name = storeName;
+                        //newSale.StoreID = currentStore.ID;
+
+                        int reportsLength = dataTable.Rows.Count - 1;
+
+                        for (int row = 2; row < reportsLength; row++)
+                        {
+                            DataRow dataRow = dataTable.Rows[row];
+
+                            // Product name
+                            string productName = dataRow.ItemArray[0].ToString();
+                            if (!string.IsNullOrEmpty(productName))
                             {
-                                if (char.IsDigit(productIdValue[0]))
+                                var product = data.Products.Search(p => p.ProductName == productName).FirstOrDefault();
+                                if (product != null)
                                 {
-                                    newReport.ProductID.Add(int.Parse(productIdValue));
+                                    newReport.ProductID.Add(product.ID);
+                                    //newSale.ProductID = product.ID;
                                 }
+                                else
+                                {
+                                    throw new ArgumentNullException("Product", "Not existing product!");
+                                }
+                                    
                             }
 
-                            string quantityValue = r.ItemArray[1].ToString();
+                            string quantityValue = dataRow.ItemArray[1].ToString();
                             if (!string.IsNullOrEmpty(quantityValue))
                             {
                                 if (char.IsDigit(quantityValue[0]))
                                 {
                                     newReport.Quantity.Add(int.Parse(quantityValue));
+                                    //newSale.Quantity = int.Parse(quantityValue);
                                 }
                             }
 
-                            string unitPriceValue = r.ItemArray[2].ToString();
+                            string unitPriceValue = dataRow.ItemArray[2].ToString();
                             if (!string.IsNullOrEmpty(unitPriceValue))
                             {
                                 if (char.IsDigit(unitPriceValue[0]))
                                 {
                                     newReport.UnitPrice.Add(decimal.Parse(unitPriceValue));
+                                    //newSale.SinglePrice = decimal.Parse(unitPriceValue);
                                 }
                             }
 
-                            string sumValue = r.ItemArray[3].ToString();
+                            string sumValue = dataRow.ItemArray[3].ToString();
                             if (!string.IsNullOrEmpty(sumValue))
                             {
                                 if (char.IsDigit(sumValue[0]))
                                 {
                                     newReport.Sum.Add(decimal.Parse(sumValue));
+                                    //newSale.Sum = decimal.Parse(sumValue);
                                 }
                             }
                         }
 
                         this.reports.Add(newReport);
+                        //data.Sales.Add(newSale);
                     }
 
                     excelConnection.Close();
@@ -141,49 +172,44 @@
 
         public void FillTable()
         {
-           // var context = new SupermarketSystemDbContext();
+            //var context = new SupermarketSystemDbContext();
             SupermarketSystemData data = new SupermarketSystemData();
             
-            //using (context)
-            //{
+            foreach (var report in this.reports)
+            {
+                var supermarket = data.Stores.Search(s => s.Name == report.Name).FirstOrDefault();
 
-                foreach (var report in this.reports)
+                if (supermarket == null)
                 {
-                    var supermarket = data.Stores.Search(s => s.Name == report.Name).FirstOrDefault();
-
-
-                    if (supermarket == null)
+                    var newSupermarket = new Store()
                     {
-                        var newSupermarket = new Store()
-                        {
-                            Name = report.Name
-                        };
+                        Name = report.Name
+                    };
 
-                        data.Stores.Add(newSupermarket);
-                        supermarket = newSupermarket;
-                        data.SaveChanges();
-                    }
-
-
-
-                    for (int i = 0; i < report.ProductID.Count; i++)
-                    {
-                        var newSalesReport = new Sale()
-                        {
-                            StoreID = supermarket.ID,
-                            ProductID = report.ProductID[i],
-                            Quantity = report.Quantity[i],
-                            SinglePrice = report.UnitPrice[i],
-                            Sum = report.Sum[i],
-                            Date = report.Date
-                        };
-
-                        data.Sales.Add(newSalesReport);
-                    }
+                    data.Stores.Add(newSupermarket);
+                    supermarket = newSupermarket;
+                    data.SaveChanges();
                 }
 
-                data.SaveChanges();
-            //}
+                var products = report.ProductID.Count;
+
+                for (int i = 0; i < products; i++)
+                {
+                    var newSale = new Sale()
+                    {
+                        StoreID = supermarket.ID,
+                        ProductID = report.ProductID[i],
+                        Quantity = report.Quantity[i],
+                        SinglePrice = report.UnitPrice[i],
+                        Sum = report.Sum[i],
+                        Date = report.Date
+                    };
+
+                    data.Sales.Add(newSale);
+                }
+            }
+
+            data.SaveChanges();
         }
 
         public void DeleteReports()
