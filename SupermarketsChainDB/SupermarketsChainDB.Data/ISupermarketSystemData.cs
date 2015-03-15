@@ -15,6 +15,8 @@
 
         IGenericRepository<Sale> Sales { get; }
 
+        IGenericRepository<Expense> Expenses { get; }
+
         int SaveChanges();
     }
 }

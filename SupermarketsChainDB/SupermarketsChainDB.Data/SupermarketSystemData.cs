@@ -62,6 +62,14 @@
             }
         }
 
+        public IGenericRepository<Expense> Expenses
+        {
+            get
+            {
+                return this.GetRepository<Expense>();
+            }
+        }
+
         public int SaveChanges()
         {
             return this.context.SaveChanges();
