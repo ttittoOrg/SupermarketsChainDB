@@ -22,15 +22,16 @@
             
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
-            
-            
+
+            OracleToSqlDb.MigrateToSql();
+
             SalesReportsMigrator reportsMigrator = new SalesReportsMigrator(reportsFile);
             reportsMigrator.ExtractReports();
             reportsMigrator.GetAllReports();
             reportsMigrator.FillTable();
             reportsMigrator.DeleteReports();
 
-            OracleToSqlDb.MigrateToSql();
+            
 
             //var measures = data.Measures.All().ToList();
 
