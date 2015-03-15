@@ -8,7 +8,7 @@
 
     public static class Connection
     {
-        private const string oracleConnectionString = "";
+        private const string oracleConnectionString = "User Id=SuperMarketChain;Password=111333a;Data Source=localhost:1521/xe";
         private const string sqlConnectionString = "";
         private const string mySqlConnectionString = "";
         private const string mongoConnectionString = "";

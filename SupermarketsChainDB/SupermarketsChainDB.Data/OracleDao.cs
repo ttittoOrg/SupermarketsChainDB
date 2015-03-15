@@ -1,15 +1,10 @@
-﻿namespace SupermarketsChainDB.Data.OracleDb
+﻿namespace SupermarketsChainDB.Data
 {
     using System;
-    //using System.Data.OracleClient;
     using System.Collections.Generic;
-
-    using Oracle.DataAccess.Client;
     using System.Linq;
-
+    using Oracle.DataAccess.Client;
     using SupermarketsChainDB.Models;
-
-    //using Oracle.DataAccess.Client;
 
     public class OracleDao
     {
@@ -43,7 +38,6 @@
                                     "PRODUCT_NAME, " +
                                     "MEASURE_ID, " +
                                     "PRICE, " +
-                                    "QUANTITY, " +
                                     "PRODUCT_TYPE " +  
                               "FROM PRODUCTS";
 
