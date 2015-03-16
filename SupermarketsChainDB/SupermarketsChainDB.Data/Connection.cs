@@ -11,7 +11,8 @@
         private const string oracleConnectionString = "User Id=SuperMarketChain;Password=111333a;Data Source=localhost:1521/xe";
         private const string sqlConnectionString = "";
         private const string mySqlConnectionString = "";
-        private const string mongoConnectionString = "";
+        private const string mongoDatabaseHost = "mongodb://127.0.0.1";
+        private const string mongoDatabaseName = "SalesByProductReports";
 
         public static string GetOracleConnectionString()
         {
@@ -28,9 +29,10 @@
             return mySqlConnectionString;
         }
 
-        public static string GetMongoConnectionString()
+        public static string[] GetMongoConnectionString()
         {
-            return mongoConnectionString;
+            string[] connectionSting = new string[] {mongoDatabaseHost, mongoDatabaseName };
+            return connectionSting;
         }
     }
 }
