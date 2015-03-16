@@ -60,7 +60,7 @@
   <ItemGroup>
     <Compile Include="SalesReport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesReportGenerator.cs" />
+    <Compile Include="SalesReportHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

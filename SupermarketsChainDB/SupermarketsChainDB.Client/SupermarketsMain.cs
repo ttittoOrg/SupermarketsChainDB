@@ -12,6 +12,7 @@
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
     using SupermarketsChainDb.Manager;
+    using JSONReportsMongoDB;
 
     public class SupermarketsMain
     {
@@ -27,6 +28,9 @@
 
             XMLFromToMSSQL xmlParser = new XMLFromToMSSQL(data, @"../../../Input/Sample-Vendor-Expenses.xml");
             xmlParser.SaveExpenses();
+
+            SalesReportHandler reportsHandler = new SalesReportHandler(data, @"../../../Output/Json-Reports");
+            reportsHandler.SaveReportsToFiles(new DateTime(2014, 7, 20), new DateTime(2014, 7, 22));
 
             //var measures = data.Measures.All().ToList();
 
