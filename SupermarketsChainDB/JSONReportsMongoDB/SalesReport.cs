@@ -24,10 +24,12 @@
 
         [JsonProperty("total-quantity-sold")]
         [BsonElement("total-quantity-sold")]
+        [BsonRepresentation(BsonType.Double)] 
         public decimal TotalQuantitySold { get; set; }
 
         [JsonProperty("total-incomes")]
         [BsonElement("total-incomes")]
+        [BsonRepresentation(BsonType.Double)] 
         public decimal TotalIncome { get; set; }
 
         // this is for testing purposes only TO BE DELETED!

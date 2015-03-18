@@ -6,15 +6,18 @@
     using System.IO;
     using System.Linq;
     using Newtonsoft.Json;
-    //  using MongoDB.Driver;
+    using MongoDB.Driver;
+
     using SupermarketsChainDB.Models;
     using SupermarketsChainDB.Data;
   
-
     public class SalesReportHandler
     {
         private SupermarketSystemData data;
         private string reportsFilePath;
+        private List<SalesReport> salesReports;
+        private static string connectionStringLocalhost = Connection.GetMongoConnectionString();
+        private static string connectionStringCloud = Connection.GetMongoConnectionStringCloud();
 
         public SalesReportHandler(SupermarketSystemData data, string reportsFilePath)
         {
@@ -24,7 +27,8 @@
 
         public void SaveReportsToFiles(DateTime startDate, DateTime endDate)
         {
-            var salesReports = this.GenerateReports(startDate, endDate);
+            List<SalesReport> salesReports = this.GenerateReports(startDate, endDate);
+
             foreach (var report in salesReports)
             {
                 string fileName = report.ProductId.ToString() + ".json";
@@ -36,8 +40,34 @@
             Console.WriteLine(string.Format("{0} reports were generated.", salesReports.Count));
         }
 
+        public void SaveReportsToMongoDb(string host)
+        {
+            Console.WriteLine("Connecting to MongoDB ...");
+            string connectionString = string.Empty;
+
+            switch (host)
+            {
+                case "localhost" :
+                    connectionString = connectionStringLocalhost;
+                        break;
+                case "cloud" :
+                    connectionString = connectionStringCloud;
+                    break;
+                default:
+                    break;
+            }
+
+            var monogoDb = GetDatabase(connectionString);
+            var salesReportsCollection = monogoDb.GetCollection<SalesReport>("reports");
+            salesReportsCollection.InsertBatch(this.salesReports);
+
+            Console.WriteLine(string.Format("{0} reports were saved to MongoDB.", salesReports.Count));
+        }
+
         private List<SalesReport> GenerateReports(DateTime startDate, DateTime endDate)
         {
+            Console.WriteLine("Generating JSON reports ...");
+
             var salesReports = new List<SalesReport>();
             var sales = this.data.Sales
                 .Search(s => s.Date >= startDate && s.Date <= endDate)
@@ -88,17 +118,18 @@
                 salesReports.Add(currentReport);
             }
 
+            this.salesReports = salesReports;
             return salesReports;
         }
 
-        // private MongoDatabase monogoDb = GetDatabase(mongoDbConnectionString);
-
         // private method for connecting to the mongo server and getting the database
-        //private static MongoDatabase GetDatabase(string[] mongoDbConnectionString)
-        //{
-        //    var mongoClient = new MongoClient(mongoDbConnectionString[0]);
-        //    var server = mongoClient.GetServer();
-        //    return server.GetDatabase(mongoDbConnectionString[1]);
-        //}
+        private static MongoDatabase GetDatabase(string connectionString)
+        {
+            string dataBaseHost = connectionString.Split(new char[] {' '})[0];
+            string dataBaseName = connectionString.Split(new char[] { ' ' })[1];
+            var mongoClient = new MongoClient(dataBaseHost);
+            var server = mongoClient.GetServer();
+            return server.GetDatabase(dataBaseName);
+        }
     }
 }

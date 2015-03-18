@@ -18,7 +18,7 @@
     {
         private const string reportsFile = "../../../Input/Sales-Reports.zip";
 
-        static void Main(string[] args)
+        static void Main()
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<SupermarketSystemDbContext, Configuration>());
             var data = new SupermarketSystemData();
@@ -31,6 +31,12 @@
 
             SalesReportHandler reportsHandler = new SalesReportHandler(data, @"../../../Output/Json-Reports");
             reportsHandler.SaveReportsToFiles(new DateTime(2014, 7, 20), new DateTime(2014, 7, 22));
+
+            string localhost = "localhost";
+            string cloud = "cloud";
+
+            reportsHandler.SaveReportsToMongoDb(localhost);
+            reportsHandler.SaveReportsToMongoDb(cloud);
 
             //var measures = data.Measures.All().ToList();
 

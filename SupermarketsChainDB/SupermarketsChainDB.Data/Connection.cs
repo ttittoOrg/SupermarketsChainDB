@@ -11,8 +11,8 @@
         private const string oracleConnectionString = "User Id=SuperMarketChain;Password=111333a;Data Source=localhost:1521/xe";
         private const string sqlConnectionString = "";
         private const string mySqlConnectionString = "";
-        private const string mongoDatabaseHost = "mongodb://127.0.0.1";
-        private const string mongoDatabaseName = "SalesByProductReports";
+        private const string mongoDbConnectionStringLocalhost = "mongodb://127.0.0.1 SalesByProductReports";
+        private const string mongoDbConnectionStringCloud = "mongodb://teamlepus:softuni777@ds061767.mongolab.com:61767/salesbyproductreports salesbyproductreports";
 
         public static string GetOracleConnectionString()
         {
@@ -29,10 +29,14 @@
             return mySqlConnectionString;
         }
 
-        public static string[] GetMongoConnectionString()
+        public static string GetMongoConnectionString()
         {
-            string[] connectionSting = new string[] {mongoDatabaseHost, mongoDatabaseName };
-            return connectionSting;
+            return mongoDbConnectionStringLocalhost;
+        }
+
+        public static string GetMongoConnectionStringCloud()
+        {
+            return mongoDbConnectionStringCloud;
         }
     }
 }
