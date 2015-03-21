@@ -47,21 +47,29 @@
 
             switch (host)
             {
-                case "localhost" :
+                case "localhost":
                     connectionString = connectionStringLocalhost;
-                        break;
-                case "cloud" :
+                    break;
+                case "cloud":
                     connectionString = connectionStringCloud;
                     break;
                 default:
                     break;
             }
 
-            var monogoDb = GetDatabase(connectionString);
-            var salesReportsCollection = monogoDb.GetCollection<SalesReport>("reports");
-            salesReportsCollection.InsertBatch(this.salesReports);
+            try
+            {
+                var monogoDb = GetDatabase(connectionString);
+                var salesReportsCollection = monogoDb.GetCollection<SalesReport>("reports");
+                salesReportsCollection.InsertBatch(this.salesReports);
+            }
+            catch (MongoConnectionException ex)
+            {
+                Console.WriteLine("Connection to MongoDB failed, please check your settings!");
+                Console.WriteLine(ex.Message);
+            }
 
-            Console.WriteLine(string.Format("{0} reports were saved to MongoDB.", salesReports.Count));
+            Console.WriteLine("{0} reports were saved to MongoDB.", this.salesReports.Count);
         }
 
         private List<SalesReport> GenerateReports(DateTime startDate, DateTime endDate)
