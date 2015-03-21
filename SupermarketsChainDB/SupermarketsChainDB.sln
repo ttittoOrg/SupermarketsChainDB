@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketsChainDB.Client", "SupermarketsChainDB.Client\SupermarketsChainDB.Client.csproj", "{A9D4A456-FAC5-45C9-83DD-0A9F4B7564F4}"
 EndProject
@@ -17,11 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketsChainDb.Manager
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Input", "Input", "{C687CF63-ADBD-42D7-A788-77D6C6744888}"
 	ProjectSection(SolutionItems) = preProject
-		SalesInfo\Sales-Reports.zip = SalesInfo\Sales-Reports.zip
+		Input\Sales-Reports.zip = Input\Sales-Reports.zip
 		Input\Sample-Vendor-Expenses.xml = Input\Sample-Vendor-Expenses.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONReportsMongoDB", "JSONReportsMongoDB\JSONReportsMongoDB.csproj", "{F4ADD459-144D-424E-90A7-26A6BC9C8FDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Output", "Output", "{EA93A47E-9607-43E7-8817-A51CDF18A815}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Json-Reports", "Json-Reports", "{397F8B39-C5DB-4FB1-92C4-62E8A29EFC37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -60,5 +64,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{397F8B39-C5DB-4FB1-92C4-62E8A29EFC37} = {EA93A47E-9607-43E7-8817-A51CDF18A815}
 	EndGlobalSection
 EndGlobal
