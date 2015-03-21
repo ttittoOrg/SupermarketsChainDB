@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PdfReport.cs" />
-    <Compile Include="PdfReporter.cs" />
+    <Compile Include="PdfReportHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

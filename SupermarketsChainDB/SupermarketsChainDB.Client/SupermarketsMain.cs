@@ -3,16 +3,18 @@
     using System;
     using System.Collections.Generic;
     using System.Configuration;
+    using System.Data.Entity;
     using System.Globalization;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
+
+    using GeneratePDFSalesReports;
+    using JSONReportsMongoDB;
     using SQLManager;
-    using System.Data.Entity;
     using SupermarketsChainDB.Data.Migrations;
     using SupermarketsChainDB.Data;
     using SupermarketsChainDb.Manager;
-    using JSONReportsMongoDB;
 
     public class SupermarketsMain
     {
@@ -37,8 +39,8 @@
 
             reportsHandler.SaveReportsToMongoDb(localhost);
             reportsHandler.SaveReportsToMongoDb(cloud);
-			
-		    PdfReportHandler pdfReport = new PdfReportHandler(data, @"..\\..\\..\\SalesReports");
+
+            PdfReportHandler pdfReport = new PdfReportHandler(data, @"../../../Output/Sales-Reports");
             pdfReport.CreateReport(new DateTime(2000, 7, 20), new DateTime(2014, 7, 22));
 
             //var measures = data.Measures.All().ToList();

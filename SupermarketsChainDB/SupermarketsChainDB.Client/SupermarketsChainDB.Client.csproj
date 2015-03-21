@@ -58,6 +58,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GeneratePDFSalesReports\GeneratePDFSalesReports.csproj">
+      <Project>{5d173d70-5316-4d37-bbd8-4ed70b474987}</Project>
+      <Name>GeneratePDFSalesReports</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JSONReportsMongoDB\JSONReportsMongoDB.csproj">
       <Project>{f4add459-144d-424e-90a7-26a6bc9c8fde}</Project>
       <Name>JSONReportsMongoDB</Name>
