@@ -22,6 +22,7 @@
             MigrateVendors();
             MigrateProducts();
             MigrateExpenses();
+            MigrateSales();
         }
 
         // just for testing purposes
@@ -114,7 +115,7 @@
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine("Something went wrong with your MySQL connection!");
+                    Console.WriteLine("Something went wrong during the Measures table migration!");
                     Console.WriteLine(ex.Message);
                 }
             }
@@ -158,7 +159,7 @@
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine("Something went wrong with your MySQL connection!");
+                    Console.WriteLine("Something went wrong during the Vendors table migration!");
                     Console.WriteLine(ex.Message);
                 }
             }
@@ -212,7 +213,7 @@
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine("Something went wrong with your MySQL connection!");
+                    Console.WriteLine("Something went wrong during the Products table migration!");
                     Console.WriteLine(ex.Message);
                 }
             }
@@ -264,7 +265,65 @@
                 }
                 catch (MySqlException ex)
                 {
-                    Console.WriteLine("Something went wrong with your MySQL connection!");
+                    Console.WriteLine("Something went wrong during the Expenses table migration!");
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            connection.Close();
+        }
+
+        private static void MigrateSales()
+        {
+            var data = new SupermarketSystemData();
+            var sales = data.Sales.All().ToList();
+
+            using (connection = new MySqlConnection { ConnectionString = ConnectionString })
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand createTable = connection.CreateCommand();
+                    createTable.CommandText =
+                        "CREATE TABLE IF NOT EXISTS `Sales` (" +
+                            "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                            "StoreId INT NOT NULL, " +
+                            "ProductId INT NOT NULL, " +
+                            "Quantity INT NOT NULL, " +
+                            "SinglePrice DECIMAL(18,2) NOT NULL, " +
+                            "Sum DECIMAL(18,2) NOT NULL, " +
+                            "`Date` DATETIME NOT NULL" +
+                        ");";
+                    createTable.ExecuteNonQuery();
+
+                    createTable.CommandText = "ALTER TABLE Sales " +
+                        "ADD CONSTRAINT fk_ProductsSales FOREIGN KEY (ProductId) REFERENCES Products(Id)";
+                    createTable.ExecuteNonQuery();
+
+                    MySqlCommand insertCmd = connection.CreateCommand();
+
+                    foreach (var sale in sales)
+                    {
+                        string dateFormatForMySql = sale.Date.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        insertCmd.CommandText =
+                        "INSERT INTO Sales(Id, StoreId, ProductId, Quantity, SinglePrice, Sum, `Date`) " +
+                        "VALUES (" + sale.Id + ", " +
+                                     sale.StoreId + ", " +
+                                     sale.ProductId + ", " +
+                                     sale.Quantity + ", " +
+                                     sale.SinglePrice + ", " +
+                                     sale.Sum + ", " +
+                                     "'" + dateFormatForMySql + "'" +
+                                ")";
+                        insertCmd.ExecuteNonQuery();
+                    }
+
+                    Console.WriteLine("Successfully migrated Sales table from MS SQL to MySQL");
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Something went wrong during the Sales table migration!");
                     Console.WriteLine(ex.Message);
                 }
             }
