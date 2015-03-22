@@ -8,7 +8,7 @@
     // Repository pattern
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private ISupermarketSystemDbContext context;
+        protected ISupermarketSystemDbContext context;
 
         public GenericRepository(ISupermarketSystemDbContext supermarketSystemDbContext)
         {

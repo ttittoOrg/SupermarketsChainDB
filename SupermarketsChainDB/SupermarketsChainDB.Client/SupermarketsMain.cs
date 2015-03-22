@@ -30,6 +30,7 @@
 
             XMLFromToMSSQL xmlParser = new XMLFromToMSSQL(data, @"../../../Input/Sample-Vendor-Expenses.xml");
             xmlParser.SaveExpenses();
+            
 
             SalesReportHandler reportsHandler = new SalesReportHandler(data, @"../../../Output/Json-Reports");
             reportsHandler.SaveReportsToFiles(new DateTime(2014, 7, 20), new DateTime(2014, 7, 22));
@@ -66,6 +67,7 @@
             //}
 
             //OracleToSqlDb.MigrateToSql();
+            xmlParser.GenerateSalesByVendorReport(@"../../../Output/Sales-by-Vendors-Report.xml", new DateTime(2014, 07, 01), new DateTime(2014, 07, 31));
         }
     }
 }
