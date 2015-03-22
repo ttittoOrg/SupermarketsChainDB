@@ -63,7 +63,8 @@
             //OracleToSqlDb.MigrateToSql();
             //xmlParser.GenerateSalesByVendorReport(@"../../../Output/Sales-by-Vendors-Report.xml", new DateTime(2014, 07, 01), new DateTime(2014, 07, 31));
 
-            MsSqlToMySql.MigrateToMySql();
+            //MsSqlToMySql.MigrateToMySql();
+
         }
     }
 }

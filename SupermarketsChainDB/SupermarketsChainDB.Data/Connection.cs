@@ -1,4 +1,6 @@
-﻿namespace SupermarketsChainDB.Data
+﻿using System;
+
+namespace SupermarketsChainDB.Data
 {
     public static class Connection
     {
@@ -13,6 +15,13 @@
         private const string MongoDbConnectionStringLocalhost = "mongodb://127.0.0.1 SalesByProductReports";
         private const string MongoDbConnectionStringCloud = 
             "mongodb://teamlepus:softuni777@ds061767.mongolab.com:61767/salesbyproductreports salesbyproductreports";
+
+        private const string SqLiteConnectionString = "Data Source=MarketChain.sqlite;Version=3;";
+
+        public static string GetSqLiteConnectionString() 
+        {
+            return SqLiteConnectionString;
+        }
 
         public static string GetOracleConnectionString()
         {
