@@ -21,6 +21,7 @@
             MigrateMeasures();
             MigrateVendors();
             MigrateProducts();
+            MigrateExpenses();
         }
 
         // just for testing purposes
@@ -46,7 +47,7 @@
                     createDatabase.ExecuteNonQuery();
                     connection.Close();
 
-                    Console.WriteLine("Database created successfully");
+                    Console.WriteLine("Database created successfully (if not already created)");
                 }
                 catch (MySqlException ex)
                 {
@@ -208,6 +209,58 @@
                     }
 
                     Console.WriteLine("Successfully migrated Products table from MS SQL to MySQL");
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("Something went wrong with your MySQL connection!");
+                    Console.WriteLine(ex.Message);
+                }
+            }
+
+            connection.Close();
+        }
+
+        private static void MigrateExpenses()
+        {
+            var data = new SupermarketSystemData();
+            var expenses = data.Expenses.All().ToList();
+
+            using (connection = new MySqlConnection { ConnectionString = ConnectionString })
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand createTable = connection.CreateCommand();
+                    createTable.CommandText =
+                        "CREATE TABLE IF NOT EXISTS `Expenses` (" +
+                            "Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, " +
+                            "VendorId INT NOT NULL, " +
+                            "`Date` DATETIME NOT NULL, " +
+                            "Total DECIMAL(18,2) NOT NULL" +
+                        ");";
+                    createTable.ExecuteNonQuery();
+
+                    createTable.CommandText = "ALTER TABLE Expenses " +
+                        "ADD CONSTRAINT fk_VendorsExpenses FOREIGN KEY (VendorId) REFERENCES Vendors(Id)";
+                    createTable.ExecuteNonQuery();
+
+                    MySqlCommand insertCmd = connection.CreateCommand();
+
+                    foreach (var expense in expenses)
+                    {
+                        string formatForMySql = expense.Date.ToString("yyyy-MM-dd HH:mm:ss");
+
+                        insertCmd.CommandText =
+                        "INSERT INTO Expenses(Id, VendorId, Date, Total) " +
+                        "VALUES (" + expense.Id + ", " +
+                                     expense.VendorId + ", " +
+                                     "'" + formatForMySql + "', " +
+                                     expense.Total +
+                                 ")";
+                        insertCmd.ExecuteNonQuery();
+                    }
+
+                    Console.WriteLine("Successfully migrated Expenses table from MS SQL to MySQL");
                 }
                 catch (MySqlException ex)
                 {
