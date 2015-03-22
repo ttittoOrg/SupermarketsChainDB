@@ -1,42 +1,42 @@
 ﻿namespace SupermarketsChainDB.Data
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     public static class Connection
     {
-        private const string oracleConnectionString = "User Id=SuperMarketChain;Password=111333a;Data Source=localhost:1521/xe";
-        private const string sqlConnectionString = "";
-        private const string mySqlConnectionString = "";
-        private const string mongoDbConnectionStringLocalhost = "mongodb://127.0.0.1 SalesByProductReports";
-        private const string mongoDbConnectionStringCloud = "mongodb://teamlepus:softuni777@ds061767.mongolab.com:61767/salesbyproductreports salesbyproductreports";
+        private const string OracleConnectionString =
+            "User Id=SuperMarketChain;Password=111333a;Data Source=localhost:1521/xe";
+
+        private const string SqlConnectionString = "";
+
+        private const string MySqlConnectionString =
+            "Server=localhost;Port=3306;Database=SuperMarketChain;Uid=root;Pwd=111333a;";
+
+        private const string MongoDbConnectionStringLocalhost = "mongodb://127.0.0.1 SalesByProductReports";
+        private const string MongoDbConnectionStringCloud = 
+            "mongodb://teamlepus:softuni777@ds061767.mongolab.com:61767/salesbyproductreports salesbyproductreports";
 
         public static string GetOracleConnectionString()
         {
-            return oracleConnectionString;
+            return OracleConnectionString;
         }
 
         public static string GetSqlConnectionString()
         {
-            return sqlConnectionString;
+            return SqlConnectionString;
         }
 
         public static string GetMySqlConnectionString()
         {
-            return mySqlConnectionString;
+            return MySqlConnectionString;
         }
 
         public static string GetMongoConnectionString()
         {
-            return mongoDbConnectionStringLocalhost;
+            return MongoDbConnectionStringLocalhost;
         }
 
         public static string GetMongoConnectionStringCloud()
         {
-            return mongoDbConnectionStringCloud;
+            return MongoDbConnectionStringCloud;
         }
     }
 }

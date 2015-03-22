@@ -14,9 +14,9 @@
 
         public static void MigrateToSql()
         {
-            MigrateMeasures();
-            MigrateVendors();
-            MigrateProducts();
+            //MigrateMeasures();
+            //MigrateVendors();
+            //MigrateProducts();
         }
 
         private static void Connect()
