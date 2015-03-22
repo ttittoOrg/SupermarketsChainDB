@@ -17,6 +17,7 @@
 
         public static void MigrateToMySql()
         {
+            CreateDatabase();
             MigrateMeasures();
             MigrateVendors();
             MigrateProducts();
@@ -29,6 +30,30 @@
             connection.Open();
             Console.WriteLine("Connected to MySql" + connection.ServerVersion);
             connection.Close();
+        }
+
+        private static void CreateDatabase()
+        {
+            const string InitialConnectionString = "Server=localhost;Port=3306;Uid=root;Pwd=111333a;";
+
+            using (connection = new MySqlConnection { ConnectionString = InitialConnectionString })
+            {
+                try
+                {
+                    connection.Open();
+                    MySqlCommand createDatabase = connection.CreateCommand();
+                    createDatabase.CommandText = "CREATE DATABASE IF NOT EXISTS SuperMarketChain;";
+                    createDatabase.ExecuteNonQuery();
+                    connection.Close();
+
+                    Console.WriteLine("Database created successfully");
+                }
+                catch (MySqlException ex)
+                {
+                    Console.WriteLine("The database couldn't be created!");
+                    Console.WriteLine(ex.Message);
+                }
+            }
         }
 
         private static void MigrateMeasures()
@@ -128,6 +153,7 @@
                     }
 
                     Console.WriteLine("Successfully migrated Vendors table from MS SQL to MySQL");
+
                 }
                 catch (MySqlException ex)
                 {
