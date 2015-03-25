@@ -10,7 +10,7 @@ namespace SupermarketsChainDB.Data
         private const string SqlConnectionString = "";
 
         private const string MySqlConnectionString =
-            "Server=localhost;Port=3306;Database=SuperMarketChain;Uid=root;Pwd=111333a;";
+            "Server=localhost;Port=3306;Database=supermarketchain;Uid=root;Pwd=;";
 
         private const string MongoDbConnectionStringLocalhost = "mongodb://127.0.0.1 SalesByProductReports";
         private const string MongoDbConnectionStringCloud = 

@@ -17,7 +17,7 @@
 
         protected override void Seed(SupermarketSystemDbContext context)
         {
-            OracleToSqlDb.MigrateToSql();
+          //  OracleToSqlDb.MigrateToSql();
 
             /*
 

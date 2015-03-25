@@ -36,7 +36,7 @@
 
         private static void CreateDatabase()
         {
-            const string InitialConnectionString = "Server=localhost;Port=3306;Uid=root;Pwd=111333a;";
+            const string InitialConnectionString = "Server=localhost;Port=3306;Uid=root;Pwd=;";
 
             using (connection = new MySqlConnection { ConnectionString = InitialConnectionString })
             {
